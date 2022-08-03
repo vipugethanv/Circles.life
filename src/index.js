@@ -2,6 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import 'index.css';
+//import { ThemeProvider } from 'emotion-theming';
+//import theme form '@rebass/preset';
+import { ThemeProvider } from 'theme-ui';
+
+
+//export default props =>
+//<ThemeProvider theme={theme}>
+//{props.children}
+//</ThemeProvider>
 
 
 const HelloWorld = () => {
