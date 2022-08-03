@@ -14,7 +14,6 @@ import { ThemeProvider } from 'theme-ui';
 
 
 const HelloWorld = () => {
-    //<link rel="stylesheet" href="index.css"></link>
     return(
         
     <div class="centre">
