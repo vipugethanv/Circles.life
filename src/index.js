@@ -1,21 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route} from 'react-router-dom';
 import 'index.css';
 //import { ThemeProvider } from 'emotion-theming';
 //import theme form '@rebass/preset';
-import { ThemeProvider } from 'theme-ui';
+//import { ThemeProvider } from 'theme-ui';
 
 
 //export default props =>
 //<ThemeProvider theme={theme}>
 //{props.children}
 //</ThemeProvider>
+const Home =()=>
+{
+    return<div>Home</div>
+}
 
+const About =() =>
+{
+    return<div>About</div>
+}
 
-const HelloWorld = () => {
+const Signup = () => {
     return(
-        
+     <BrowserRouter>  
     <div class="centre">
     <h1>Login to pick a Challenge</h1>
     <form method='post'>
@@ -32,13 +40,13 @@ const HelloWorld = () => {
 
         
             <input type="submit" value="Login"/><br></br><br></br>
-       
+      
     </form> 
     </div>
-    
+    </BrowserRouter>
     )
     ;
     
 }
 
-ReactDOM.render(<HelloWorld />, document.getElementById("root"));
+ReactDOM.render(<Signup/>, document.getElementById("root"));
