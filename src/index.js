@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route} from 'react-router-dom';
+import { BrowserRouter as Router , Routes , Route , Link} from 'react-router-dom';
+import { Button } from 'rebass';
 import 'index.css';
+import contactPage from "./contactPage";
+
 //import { ThemeProvider } from 'emotion-theming';
 //import theme form '@rebass/preset';
 //import { ThemeProvider } from 'theme-ui';
@@ -19,11 +22,15 @@ const Home =()=>
 const About =() =>
 {
     return<div>About</div>
+
+    
 }
 
+    
+
 const Signup = () => {
-    return(
-     <BrowserRouter>  
+    return(  
+        
     <div class="centre">
     <h1>Login to pick a Challenge</h1>
     <form method='post'>
@@ -40,10 +47,12 @@ const Signup = () => {
 
         
             <input type="submit" value="Login"/><br></br><br></br>
+            
+       
       
     </form> 
     </div>
-    </BrowserRouter>
+   
     )
     ;
     
