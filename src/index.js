@@ -1,10 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router , Routes , Route , Switch} from 'react-router-dom';
+import { BrowserRouter as Router , Routes , Route , Link} from 'react-router-dom';
 import { Button } from 'rebass';
 import 'index.css';
-import ContactPage from "./contactPage";
-import AboutPage from "./aboutPage";
+import contact from "./contact";
+import about from "./about";
 
 //import { ThemeProvider } from 'emotion-theming';
 //import theme form '@rebass/preset';
@@ -35,14 +35,24 @@ const Signup = () => {
             <input type="password" required/>
         </div>
 
-        <label>vipu</label>
+        
             <input type="submit" value="Login"/><br></br><br></br>
             
        <Router>
+       <div className="App">
+    <ul>
+	    <li>
+		      <Link to="/about">About Us</Link>
+	    </li>
+
+	    <li>
+		      <Link to="/contact">Contact Us</Link>
+	    </li>
+	  </ul>
+  </div>
         <Routes>
-            <Route path='/' element= {<AboutPage/>}>
-                
-            </Route>
+            <Route exact path='/about' element={< about />}></Route>
+            <Route exact path='/contact' element={< contact />}></Route>
         </Routes>
        </Router>
       

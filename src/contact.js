@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ContactPage() {
+function contact() {
     return (
       <div>
         <h1>This is the home page</h1>
@@ -8,4 +8,4 @@ function ContactPage() {
     );
   }
   
-  export default ContactPage;
+  export default contact;
