@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router , Routes , Route , Link} from 'react-router-dom';
 import { Button } from 'rebass';
 import 'index.css';
-import contact from "./contact";
-import about from "./about";
+import Contact from "./Contact";
+import About from "./About";
 
 //import { ThemeProvider } from 'emotion-theming';
 //import theme form '@rebass/preset';
@@ -42,17 +42,17 @@ const Signup = () => {
        <div className="App">
     <ul>
 	    <li>
-		      <Link to="/about">About Us</Link>
+		      <Link to="/About">About Us</Link>
 	    </li>
 
 	    <li>
-		      <Link to="/contact">Contact Us</Link>
+		      <Link to="/Contact">Contact Us</Link>
 	    </li>
 	  </ul>
   </div>
         <Routes>
-            <Route exact path='/about' element={< about />}></Route>
-            <Route exact path='/contact' element={< contact />}></Route>
+            <Route exact path='/About' element={< About />}></Route>
+            <Route exact path='/Contact' element={< Contact />}></Route>
         </Routes>
        </Router>
       
