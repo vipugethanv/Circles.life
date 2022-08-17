@@ -18,7 +18,7 @@ import App from "./App";
 
 const Home = () => {
   return (
-    <div className="centre">
+    <div className="Navigation">
       <Router>
         <div className="App">
           <ul>
