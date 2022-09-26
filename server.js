@@ -20,16 +20,24 @@ app.post('/user-service/login',(req,res)=>{
         
     }else{
         
-        return res.sendStatus(400);
+        return res.status(400).send ("Login Failed")
     }
   
  
 })
 
-app.get('/user-service/user-details',(req,res)=>{
+app.post('/user-service/user-details',(req,res)=>{
 
     
     const details=req.body;
     return res.status(200).json(details)
+
+})
+
+app.get('/',(req,res)=>{
+
+    
+
+    return res.status(200).json({name:"vipu"})
 
 })
