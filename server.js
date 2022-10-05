@@ -6,7 +6,7 @@ app.listen(port,()=>{
     console.log("Server Connected");
 })
 
-const email="admin@circles.asia";
+const email="admin@hello.world";
 const password="circles111";
 const name="vipu";
 const age="25";
