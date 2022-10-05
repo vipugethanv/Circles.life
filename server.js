@@ -8,6 +8,8 @@ app.listen(port,()=>{
 
 const email="admin@circles.asia";
 const password="circles111";
+const name="vipu";
+const age="25";
 
 app.post('/user-service/login',(req,res)=>{
     const usermail=req.body.usermail;
@@ -26,11 +28,12 @@ app.post('/user-service/login',(req,res)=>{
  
 })
 
-app.post('/user-service/user-details',(req,res)=>{
+app.get('/user-service/user-details',(req,res)=>{
 
-    
-    const details=req.body;
-    return res.status(200).json(details)
+    const id = "001";
+    const name = "Admin";
+    const age = "25";
+    return res.status(200).json({id,name,age})
 
 })
 
@@ -38,6 +41,6 @@ app.get('/',(req,res)=>{
 
     
 
-    return res.status(200).json({name:"vipu"})
+    res.sendFile(__dirname + "/" + "Newsignup.js"); 
 
 })
