@@ -4,6 +4,7 @@ import "index.css";
 import Contact from "./Contact";
 import About from "./About";
 import Signup from "./Newsignup";
+import Dashboard from "./Dashboard";
 //import { ThemeProvider } from 'emotion-theming';
 //import theme form '@rebass/preset';
 //import { ThemeProvider } from 'theme-ui';
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/" element={<Signup />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
+        <Route path = "/Dashboard" element={<Dashboard/>}></Route>
       </Routes>
     </Router>
   );

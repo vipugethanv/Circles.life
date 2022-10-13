@@ -1,15 +1,15 @@
 const express=require('express');
+const cors = require('cors')
 const app=express();
 const port=3000;
 app.use(express.json());
+app.use(cors())
 app.listen(port,()=>{
     console.log("Server Connected");
 })
 
 const email="admin@hello.world";
 const password="circles111";
-const name="vipu";
-const age="25";
 
 app.post('/user-service/login',(req,res)=>{
     const usermail=req.body.usermail;
@@ -18,11 +18,11 @@ app.post('/user-service/login',(req,res)=>{
         if(email==usermail && password==userpassword)
     {
         
-        return res.status(200).send("Login Success");
+        return res.status(200).json({message:"login success"});
         
     }else{
         
-        return res.status(400).send ("Login Failed")
+        return res.status(400).json({message:"login failed"})
     }
   
  
