@@ -31,7 +31,7 @@ const Signup = () => {
     if (response.status === LOGIN_API_ERROR_CODE) {
       console.log("login Failed")
       alert("login Failed");
-      window.location.replace("http://localhost:8080/Dashboard");
+      window.location = "/Dashboard";
 
     } else if (response.status === LOGIN_API_SUCCESS_CODE) {
       console.log("login Success")
