@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, NavLink } from "react-router-dom";
 import "index.css";
 import Contact from "./Contact";
 import About from "./About";
@@ -16,6 +16,7 @@ import Dashboard from "./Dashboard";
 
 const App = () => {
   return (
+    
     <Router>
       <Routes>
         <Route path="/" element = {<Signup/>}></Route>

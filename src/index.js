@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, NavLink} from "react-router-dom";
 import "index.css";
 //import Contact from "./Contact";
 //import About from "./About";
@@ -12,10 +12,10 @@ import About from "./About";
 import Signup from "./Newsignup";
 import Dashboard from "./Dashboard";
 
-const container = document.getElementById("root");
+const root = createRoot(document.getElementById("root"));
 //const root = createRoot(container);
 //root.render(<App />);
-render(
+root.render(
     <Router>
       <Routes>
         <Route path="/" element = {<Signup/>}></Route>
@@ -23,6 +23,5 @@ render(
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path = "/Dashboard" element={<Dashboard/>}></Route>
       </Routes>
-    </Router>,
-    container
+    </Router>
 )

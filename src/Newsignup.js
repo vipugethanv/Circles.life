@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+history
+
 const LOGIN_API_ERROR_CODE = 400;
 const LOGIN_API_SUCCESS_CODE = 200;
 
@@ -31,11 +33,13 @@ const Signup = () => {
     if (response.status === LOGIN_API_ERROR_CODE) {
       console.log("login Failed")
       alert("login Failed");
-      window.location = "/Dashboard";
+      
+
 
     } else if (response.status === LOGIN_API_SUCCESS_CODE) {
       console.log("login Success")
       alert("login Success");
+      window.location = "/Dashboard";
     }
   };
 

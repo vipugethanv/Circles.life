@@ -4,6 +4,7 @@ const app=express();
 const port=3000;
 app.use(express.json());
 app.use(cors())
+app.use(express.static('build'))
 app.listen(port,()=>{
     console.log("Server Connected");
 })
@@ -39,8 +40,8 @@ app.get('/user-service/user-details',(req,res)=>{
 
 app.get('/',(req,res)=>{
 
-    
-
-    res.sendFile(__dirname + "/" + "Newsignup.js"); 
+    res.sendFile(__dirname + "/build/index.html"); 
 
 })
+
+
