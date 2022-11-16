@@ -17,7 +17,7 @@ app.post("/user-service/login", (req, res) => {
   const userpassword = req.body.userpassword;
 
   if (email == usermail && password == userpassword) {
-    return res.status(200).json({ message: "login success" });
+    return res.status(200).json({ message: "login success",email:usermail});
   } else {
     return res.status(400).json({ message: "login failed" });
   }

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "About.css";
+import { useNavigate } from "react-router-dom";
 
 history;
 
@@ -11,6 +12,8 @@ const LOGIN_API_SUCCESS_CODE = 200;
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigation = useNavigate()
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -34,9 +37,11 @@ const Signup = () => {
       console.log("login Failed");
       alert("login Failed");
     } else if (response.status === LOGIN_API_SUCCESS_CODE) {
-      console.log("login Success");
-      alert("login Success");
-      window.location = "/Dashboard";
+      navigation("/Dashboard",{
+        state:{
+          email:data.email
+        }
+      })
     }
   };
 
