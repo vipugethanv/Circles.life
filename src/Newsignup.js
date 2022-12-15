@@ -2,8 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 //import "About.css"
-
-history;
+        
 
 const LOGIN_API_ERROR_CODE = 400;
 const LOGIN_API_SUCCESS_CODE = 200;
@@ -48,7 +47,7 @@ const Signup = () => {
       <form method="post" onSubmit={submitHandler}>
         <div className="loginpage">
           <label>Username </label>
-          <input
+          <input id = 'username'
             type="text"
             required
             value={username}
@@ -57,16 +56,17 @@ const Signup = () => {
         </div>
 
         <div className="loginpage">
-          <label>Password </label>
-          <input
+          <label >Password </label>
+          <input id = 'userpassword'
             type="password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-
-        <input data-testid="submit_button" type="submit" value="Login" />
+      
+        < button data-testid= "submit_button" type="submit" disabled={!username || !password}>Login</button>
+        
         <br></br>
         <br></br>
 
