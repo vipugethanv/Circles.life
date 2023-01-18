@@ -19,7 +19,7 @@ app.post('/user-service/login',(req,res)=>{
         if(email==usermail && password==userpassword)
     {
         
-        return res.status(200).json({message:"login success",email:usermail});
+        return res.status(200).json({message:"login success",email:usermail,token:"asd123"});
         
     }else{
         

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-//import "About.css"
-        
+import { useDispatch } from "react-redux";
+
+import { Connect } from "react-redux";
+import * as userAction from "./actions/userAction";
 
 const LOGIN_API_ERROR_CODE = 400;
 const LOGIN_API_SUCCESS_CODE = 200;
@@ -12,8 +14,10 @@ const Signup = () => {
   const [password, setPassword] = useState("");
 
   const navigation = useNavigate();
+  const dispatch = useDispatch();
   const submitHandler = async (e) => {
     e.preventDefault();
+    console.log("button click function");
 
     const body = { usermail: username, userpassword: password };
 
@@ -28,12 +32,14 @@ const Signup = () => {
     const data = await response.json();
     //console.log("Test");
     console.log(data);
-
+    console.log(response);
     if (response.status === LOGIN_API_ERROR_CODE) {
       console.log("login Failed");
       alert("login Failed");
     } else if (response.status === LOGIN_API_SUCCESS_CODE) {
+      dispatch(userLoginSuccess(data.token))
       navigation("/Dashboard", {
+        
         state: {
           email: data.email,
         },
@@ -47,7 +53,9 @@ const Signup = () => {
       <form method="post" onSubmit={submitHandler}>
         <div className="loginpage">
           <label>Username </label>
-          <input id = 'username'
+          <input
+            id="username"
+            data-testid="emailfield"
             type="text"
             required
             value={username}
@@ -56,17 +64,25 @@ const Signup = () => {
         </div>
 
         <div className="loginpage">
-          <label >Password </label>
-          <input id = 'userpassword'
+          <label>Password </label>
+          <input
+            id="userpassword"
+            data-testid="passwordfield"
             type="password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-      
-        < button data-testid= "submit_button" type="submit" disabled={!username || !password}>Login</button>
-        
+
+        <button
+          data-testid="submit_button"
+          type="submit"
+          disabled={!username || !password}
+        >
+          Login
+        </button>
+
         <br></br>
         <br></br>
 

@@ -1,2 +1,0 @@
-<input  autocomplete = "off" data-testid="submit_button" placeholder="submit_button" />
-        <button disabled data-testid = "submit"type="submit">Login</button>
